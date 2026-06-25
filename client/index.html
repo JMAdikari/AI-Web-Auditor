@@ -1,1 +1,48 @@
-<!-- Stage 5 — implemented next -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Audit Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Website Audit Tool</h1>
+      <p class="subtitle">Enter a URL to analyze its SEO, content, and UX metrics</p>
+    </header>
+
+    <div class="input-section">
+      <input type="url" id="urlInput" placeholder="https://example.com" />
+      <button id="analyzeBtn" onclick="runAudit()">Analyze</button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Fetching and analyzing page...</p>
+    </div>
+
+    <div id="error" class="hidden"></div>
+
+    <div id="results" class="hidden">
+      <section class="metrics-section">
+        <h2>Factual Metrics <span class="badge">Extracted Data</span></h2>
+        <div id="metricsGrid" class="metrics-grid"></div>
+      </section>
+
+      <section class="ai-section">
+        <h2>AI Analysis <span class="badge ai-badge">AI Generated</span></h2>
+        <div id="analysisContent"></div>
+      </section>
+
+      <section class="recommendations-section">
+        <h2>Recommendations <span class="badge ai-badge">AI Generated</span></h2>
+        <div id="recommendations"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
