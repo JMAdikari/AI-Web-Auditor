@@ -1,1 +1,179 @@
-/* Stage 5 — implemented next */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+header h1 { font-size: 1.8rem; font-weight: 700; }
+.subtitle { color: #666; margin-top: 0.5rem; }
+
+.input-section {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+#urlInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#urlInput:focus { outline: none; border-color: #4a6cf7; }
+
+#analyzeBtn {
+  padding: 0.75rem 2rem;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#analyzeBtn:hover { background: #3b5de7; }
+#analyzeBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.hidden { display: none; }
+
+#loading { text-align: center; padding: 3rem; }
+.spinner {
+  width: 40px; height: 40px;
+  border: 4px solid #ddd;
+  border-top-color: #4a6cf7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#error {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  background: #e8f4e8;
+  color: #2d7d2d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-badge { background: #eee8ff; color: #6b4acf; }
+
+.metrics-section { margin-bottom: 2.5rem; }
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.metric-card.wide { grid-column: 1 / -1; }
+.metric-value { font-size: 1.8rem; font-weight: 700; color: #4a6cf7; }
+.metric-label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+.metric-text { font-size: 0.9rem; margin-top: 0.5rem; word-break: break-word; }
+
+.analysis-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.score { font-size: 1.5rem; font-weight: 700; }
+
+.finding {
+  padding: 0.75rem;
+  border-left: 3px solid #ddd;
+  margin-bottom: 0.75rem;
+  background: #fafbfc;
+  border-radius: 0 6px 6px 0;
+}
+
+.finding.high { border-left-color: #e74c3c; }
+.finding.medium { border-left-color: #f39c12; }
+.finding.low { border-left-color: #27ae60; }
+
+.finding-issue { font-weight: 600; margin-bottom: 0.25rem; }
+.finding-metric { font-size: 0.8rem; color: #888; font-style: italic; }
+.finding-detail { font-size: 0.9rem; margin-top: 0.5rem; }
+
+.rec-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.rec-header {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rec-priority {
+  background: #4a6cf7;
+  color: white;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rec-effort, .rec-impact {
+  font-size: 0.8rem;
+  color: #666;
+  padding: 0.15rem 0.5rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.rec-card h3 { margin-bottom: 0.5rem; }
+.rec-basis { font-size: 0.8rem; color: #888; margin-top: 0.75rem; font-style: italic; }
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
