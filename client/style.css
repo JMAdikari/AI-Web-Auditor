@@ -235,6 +235,87 @@ body {
   font-size: 0.9rem;
 }
 
+/* Try section */
+.try-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.try-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.try-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.try-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.try-urls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.try-chip {
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: #fafbff;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.try-chip:hover {
+  background: var(--blue-light);
+  border-color: var(--blue);
+}
+
+.try-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.notice-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.notice-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.notice-dot.red { background: var(--red); }
+.notice-dot.orange { background: var(--orange); }
+.notice-dot.green { background: #27ae60; }
+
 /* Feature cards on landing */
 .features-grid {
   display: grid;

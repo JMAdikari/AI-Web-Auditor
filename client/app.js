@@ -327,6 +327,19 @@ function buildMetricRow(label, val1, val2) {
   `;
 }
 
+function fillUrl(url) {
+  const activeTab = localStorage.getItem(STORAGE_KEY_TAB) || 'audit';
+  if (activeTab === 'compare') {
+    const u1 = document.getElementById('url1Input');
+    const u2 = document.getElementById('url2Input');
+    if (!u1.value) { u1.value = url; u1.focus(); }
+    else { u2.value = url; u2.focus(); }
+  } else {
+    document.getElementById('urlInput').value = url;
+    document.getElementById('urlInput').focus();
+  }
+}
+
 function showLoading(show, text) {
   document.getElementById('loading').classList.toggle('hidden', !show);
   const ab = document.getElementById('analyzeBtn');

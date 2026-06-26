@@ -60,7 +60,41 @@
 
       <div id="error" class="hidden error-box"></div>
 
-      <div id="landing-features" class="features-grid">
+      <div id="landing-features">
+
+        <div class="try-section">
+          <div class="try-header">
+            <span class="try-title">Try a website</span>
+            <span class="try-note">Click any URL to auto-fill</span>
+          </div>
+          <div class="try-urls">
+            <button class="try-chip" onclick="fillUrl('https://stripe.com')">stripe.com</button>
+            <button class="try-chip" onclick="fillUrl('https://tailwindcss.com')">tailwindcss.com</button>
+            <button class="try-chip" onclick="fillUrl('https://vercel.com')">vercel.com</button>
+            <button class="try-chip" onclick="fillUrl('https://github.com')">github.com</button>
+            <button class="try-chip" onclick="fillUrl('https://linear.app')">linear.app</button>
+            <button class="try-chip" onclick="fillUrl('https://developer.mozilla.org/en-US/docs/Web/HTML')">mdn web docs</button>
+            <button class="try-chip" onclick="fillUrl('https://www.wikipedia.org')">wikipedia.org</button>
+            <button class="try-chip" onclick="fillUrl('https://www.shopify.com')">shopify.com</button>
+          </div>
+
+          <div class="try-notice">
+            <div class="notice-row">
+              <span class="notice-dot red"></span>
+              <span><strong>403 / Access Denied</strong> — the site actively blocks automated requests (common on news sites, Cloudflare-protected pages). Try a different URL.</span>
+            </div>
+            <div class="notice-row">
+              <span class="notice-dot orange"></span>
+              <span><strong>Timeout</strong> — the server took too long to respond, or the site requires JavaScript to render content. Static scraping cannot read JS-only pages.</span>
+            </div>
+            <div class="notice-row">
+              <span class="notice-dot green"></span>
+              <span><strong>Best results</strong> — marketing pages, landing pages, SaaS homepages, and documentation sites that serve standard HTML work reliably.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">&#128269;</div>
           <h3>SEO Analysis</h3>
@@ -90,6 +124,7 @@
           <div class="feature-icon">&#9878;</div>
           <h3>Competitor Compare</h3>
           <p>Audit two pages side by side. See who wins each category and get targeted recommendations.</p>
+        </div>
         </div>
       </div>
 
