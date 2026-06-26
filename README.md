@@ -1,6 +1,6 @@
-# Website Audit Tool
+<img width="1920" height="1523" alt="audit page" src="https://github.com/user-attachments/assets/70943525-c2b1-4a4b-becd-5336d7488e3e" /><img width="1920" height="1523" alt="audit page" src="https://github.com/user-attachments/assets/d8bc40dc-7854-41d6-97c7-e0665ac13b2c" /># Website Audit Tool
 
-An AI-powered tool that extracts factual metrics from any webpage and generates structured SEO, content, and UX analysis using Google Gemini. Built for the EIGHT25MEDIA AI-Native Software Engineer assessment.
+An AI-powered tool that extracts factual metrics from any webpage and generates structured SEO, content, and UX analysis using Google Gemini.
 
 ## Quick Start
 
@@ -25,6 +25,34 @@ Open `http://localhost:3000` in your browser.
 >
 > For the best experience, clone the project and run it locally — setup takes under 2 minutes and gives you full speed with your own API key.
 
+
+## 🖼️ User interface
+
+
+Single Audit page 
+
+<p align="center"> <img src="UI/audit page.png" alt="audit page" width="600" height="400"/> </p>
+
+
+website 1 (geeksforgeeks)
+
+<p align="center"> <img src="UI/example 1.png" alt="example 1" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/1.png" alt="1" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/2.png" alt="2" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/3.png" alt="3" width="600" height="400"/> </p>
+
+
+
+Competitor Compare page
+
+<p align="center"> <img src="UI/competitor compare.png" alt="competitor compare" width="600" height="400"/> </p>
+
+website 2 (nsbm vs. geeksforgeeks)
+
+<p align="center"> <img src="UI/c example.png" alt="c example" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/c1.png" alt="c1" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/c2.png" alt="c2" width="600" height="400"/> </p>
+<p align="center"> <img src="UI/c3.png" alt="c3" width="600" height="400"/> </p>
 
 ## Architecture Overview
 
