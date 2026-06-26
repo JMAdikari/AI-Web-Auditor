@@ -17,6 +17,14 @@ Open `http://localhost:3000` in your browser.
 **Get a free Gemini API key:** https://aistudio.google.com/app/apikey
 
 ---
+## Live Demo
+
+[https://ai-web-auditor.onrender.com](https://ai-web-auditor.onrender.com)
+
+> **Note:** This demo runs on Render's free tier. The server spins down after 15 minutes of inactivity — the first request after idle may take 20–30 seconds to wake up. Free tier also has limited monthly bandwidth, so the demo may occasionally be unavailable under heavy load.
+>
+> For the best experience, clone the project and run it locally — setup takes under 2 minutes and gives you full speed with your own API key.
+
 
 ## Architecture Overview
 
