@@ -19,7 +19,7 @@ Open `http://localhost:3000` in your browser.
 ---
 ## Live Demo
 
-[https://ai-web-auditor.onrender.com](https://ai-web-auditor.onrender.com)
+[https://ai-web-auditor-ydmu.onrender.com/]
 
 > **Note:** This demo runs on Render's free tier. The server spins down after 15 minutes of inactivity — the first request after idle may take 20–30 seconds to wake up. Free tier also has limited monthly bandwidth, so the demo may occasionally be unavailable under heavy load.
 >
