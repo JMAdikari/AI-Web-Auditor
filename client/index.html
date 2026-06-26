@@ -7,39 +7,171 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Website Audit Tool</h1>
-      <p class="subtitle">Enter a URL to analyze its SEO, content, and UX metrics</p>
-    </header>
+  <div class="page-wrapper">
 
-    <div class="input-section">
-      <input type="url" id="urlInput" placeholder="https://example.com" />
-      <button id="analyzeBtn" onclick="runAudit()">Analyze</button>
-    </div>
+    <nav class="navbar">
+      <div class="nav-inner">
+        <span class="nav-logo">WebAudit</span>
+        <span class="nav-tag">AI-Powered</span>
+      </div>
+    </nav>
 
-    <div id="loading" class="hidden">
-      <div class="spinner"></div>
-      <p>Fetching and analyzing page...</p>
-    </div>
+    <div class="container">
 
-    <div id="error" class="hidden"></div>
+      <div class="hero">
+        <h1>Instant Website Intelligence</h1>
+        <p class="hero-sub">Enter any URL to get a deep AI-powered audit of SEO, messaging, CTAs, content depth, and UX — grounded in real extracted metrics.</p>
 
-    <div id="results" class="hidden">
-      <section class="metrics-section">
-        <h2>Factual Metrics <span class="badge">Extracted Data</span></h2>
-        <div id="metricsGrid" class="metrics-grid"></div>
-      </section>
+        <div class="feature-pills">
+          <span class="pill">SEO Structure</span>
+          <span class="pill">Messaging Clarity</span>
+          <span class="pill">CTA Strategy</span>
+          <span class="pill">Content Depth</span>
+          <span class="pill">UX Concerns</span>
+        </div>
+      </div>
 
-      <section class="ai-section">
-        <h2>AI Analysis <span class="badge ai-badge">AI Generated</span></h2>
-        <div id="analysisContent"></div>
-      </section>
+      <div class="card input-card">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('audit')">Single Audit</button>
+          <button class="tab" onclick="switchTab('compare')">Competitor Compare</button>
+        </div>
 
-      <section class="recommendations-section">
-        <h2>Recommendations <span class="badge ai-badge">AI Generated</span></h2>
-        <div id="recommendations"></div>
-      </section>
+        <div id="tab-audit" class="tab-panel">
+          <div class="input-row">
+            <input type="url" id="urlInput" placeholder="https://example.com" onkeydown="if(event.key==='Enter') runAudit()" />
+            <button class="btn-primary" id="analyzeBtn" onclick="runAudit()">Analyze</button>
+          </div>
+        </div>
+
+        <div id="tab-compare" class="tab-panel hidden">
+          <div class="input-row">
+            <input type="url" id="url1Input" placeholder="https://your-site.com" onkeydown="if(event.key==='Enter') runCompare()" />
+            <input type="url" id="url2Input" placeholder="https://competitor.com" onkeydown="if(event.key==='Enter') runCompare()" />
+            <button class="btn-primary" id="compareBtn" onclick="runCompare()">Compare</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading" class="hidden loading-box">
+        <div class="spinner"></div>
+        <p id="loadingText">Fetching and analyzing page...</p>
+      </div>
+
+      <div id="error" class="hidden error-box"></div>
+
+      <div id="landing-features">
+
+        <div class="try-section">
+          <div class="try-header">
+            <span class="try-title">Try a website</span>
+            <span class="try-note">Click any URL to auto-fill</span>
+          </div>
+          <div class="try-urls">
+            <button class="try-chip" onclick="fillUrl('https://stripe.com')">stripe.com</button>
+            <button class="try-chip" onclick="fillUrl('https://tailwindcss.com')">tailwindcss.com</button>
+            <button class="try-chip" onclick="fillUrl('https://vercel.com')">vercel.com</button>
+            <button class="try-chip" onclick="fillUrl('https://github.com')">github.com</button>
+            <button class="try-chip" onclick="fillUrl('https://linear.app')">linear.app</button>
+            <button class="try-chip" onclick="fillUrl('https://developer.mozilla.org/en-US/docs/Web/HTML')">mdn web docs</button>
+            <button class="try-chip" onclick="fillUrl('https://www.wikipedia.org')">wikipedia.org</button>
+            <button class="try-chip" onclick="fillUrl('https://www.shopify.com')">shopify.com</button>
+          </div>
+
+          <div class="try-notice">
+            <div class="notice-row">
+              <span class="notice-dot red"></span>
+              <span><strong>403 / Access Denied</strong> — the site actively blocks automated requests (common on news sites, Cloudflare-protected pages). Try a different URL.</span>
+            </div>
+            <div class="notice-row">
+              <span class="notice-dot orange"></span>
+              <span><strong>Timeout</strong> — the server took too long to respond, or the site requires JavaScript to render content. Static scraping cannot read JS-only pages.</span>
+            </div>
+            <div class="notice-row">
+              <span class="notice-dot green"></span>
+              <span><strong>Best results</strong> — marketing pages, landing pages, SaaS homepages, and documentation sites that serve standard HTML work reliably.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#128269;</div>
+          <h3>SEO Analysis</h3>
+          <p>Checks title tags, meta descriptions, heading hierarchy, and link structure against best practices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128172;</div>
+          <h3>Messaging Clarity</h3>
+          <p>Evaluates whether your page communicates value clearly and speaks to the right audience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127919;</div>
+          <h3>CTA Strategy</h3>
+          <p>Counts and assesses call-to-action elements — are they compelling, well-placed, and clear?</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128196;</div>
+          <h3>Content Depth</h3>
+          <p>Measures word count, section structure, and whether the content answers user intent.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128736;</div>
+          <h3>UX Concerns</h3>
+          <p>Flags missing alt text, navigation gaps, form presence, and structural accessibility issues.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9878;</div>
+          <h3>Competitor Compare</h3>
+          <p>Audit two pages side by side. See who wins each category and get targeted recommendations.</p>
+        </div>
+        </div>
+      </div>
+
+      <div id="results" class="hidden">
+        <div class="results-url-bar">
+          <span id="resultsUrl"></span>
+          <button class="btn-ghost" onclick="clearAudit()">Clear</button>
+        </div>
+
+        <section class="section">
+          <h2>Factual Metrics <span class="badge badge-data">Extracted Data</span></h2>
+          <div id="metricsGrid" class="metrics-grid"></div>
+        </section>
+
+        <section class="section">
+          <h2>AI Analysis <span class="badge badge-ai">AI Generated</span></h2>
+          <div id="analysisContent"></div>
+        </section>
+
+        <section class="section">
+          <h2>Recommendations <span class="badge badge-ai">AI Generated</span></h2>
+          <div id="recommendations"></div>
+        </section>
+      </div>
+
+      <div id="compareResults" class="hidden">
+        <div class="results-url-bar">
+          <span id="compareResultsLabel"></span>
+          <button class="btn-ghost" onclick="clearCompare()">Clear</button>
+        </div>
+
+        <div id="compareHeader"></div>
+        <div id="compareMetrics"></div>
+
+        <section class="section">
+          <h2>Comparison Analysis <span class="badge badge-ai">AI Generated</span></h2>
+          <div id="compareCategories"></div>
+        </section>
+
+        <div id="compareAdvantages"></div>
+
+        <section class="section">
+          <h2>Recommendations <span class="badge badge-ai">AI Generated</span></h2>
+          <div id="compareRecommendations"></div>
+        </section>
+      </div>
+
     </div>
   </div>
 
